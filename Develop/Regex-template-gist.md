@@ -1,10 +1,12 @@
 # Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+    Regular expression (shortened as regex or regexp; sometimes referred to as rational expression) is a sequence of characters that specifies a search pattern in text. Usually such patterns are used by string-searching algorithms for "find" or "find and replace" operations on strings, or for input validation. Regular expression techniques are developed in theoretical computer science and formal language theory. 
+
+<sub>[description source](https://en.wikipedia.org/wiki/Regular_expression)<sub>
 
 ## Summary
+This gist will cover some of the most commonly used regular expression, they are usually used in conjunction with one another to achieve the programmers goal. 
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
 
 ## Table of Contents
 
@@ -65,14 +67,19 @@ ___
 ### Boundaries
 Boundaries are just like [anchors](#anchors), because it matches at a position.    
 An example would be "__\b__", which matches a zero-length.   
-Regular Expression __\bis\b__ when used on the string "this is an island" will match only "is" because the boundary specifies that the left and right character is zero-length.
+Regular Expression __\bis\b__ when used on the string "this is an island" will match only "is" because the boundary specifies that the left and right character is zero-length.   
 ___
 ### Back-references
-
+Backreferences match the same text as previously matched by a capturing group.   
+Regex "__\b(\w+)\s\1\b__" when applied to "I I am typping typing double double and I don't know why." will match "I I", "typing typing", and "double double".   
+The captured group is all individual words, and a space is placed in between the first and backreferenced capture group.
 ___
 ### Look-ahead and Look-behind
-
+Collectively called "look-around", are zero-length assertions just like [anchors](#anchors) and [boundaries](#boundaries). The difference is that lookaround actually matches characters, but then gives up the match, returning only the result: match or no match.   
+Positive lookahead example: /foo(?=bar)/ applied to "foobar foobaz" will match the first "foo" inside of "foobar" since it is expecting bar to be right after.   
+Negative lookahead example: /foo(?!bar)/ applied to "foobar foobaz" will match the "foo" inside of "foobaz" since it is expecting to match "foo" followed not by "bar".   
+Positive and Negative lookbehind works the same but the syntax is /(?<=foo)bar/ or /(?<!not )foo/   
 ___
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Hello, I am Daniel. I'm a new junior web developer who is trying hard to learn the craft, I love low level programming languages such as C++ and python, and I also have a curiousity for [Elixir Programming Language](https://en.wikipedia.org/wiki/Elixir_(programming_language)). Check out my [Github](https://github.com/DanTheDev-zsh?tab=repositories)! 
